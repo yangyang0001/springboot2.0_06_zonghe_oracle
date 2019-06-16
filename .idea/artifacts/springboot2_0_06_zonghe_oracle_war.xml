@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springboot2.0_06_zonghe_oracle:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="springboot2.0_06_zonghe.war">
+      <element id="artifact" artifact-name="springboot2.0_06_zonghe_oracle:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+添加依赖:
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-freemarker</artifactId>
+</dependency>
+
+在resources中的templates下是freemarker的默认访问路径,且访问的都是*.ftl文件
+
+书写自己的controller层的代码

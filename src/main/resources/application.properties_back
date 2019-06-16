@@ -1,0 +1,36 @@
+# \u6574\u5408 jsp \u7684\u65F6\u5019\u7684\u914D\u7F6E
+spring.mvc.view.prefix=/WEB-INF/jsp/
+spring.mvc.view.suffix=.jsp
+
+# \u52A8\u6001\u52A0\u8F7D \u4E0D\u540C\u73AF\u5883\u4E0B\u7684\u914D\u7F6E\u6587\u4EF6 \u4E0B\u9762\u7684\u914D\u7F6E\u4E2D\u6240\u6709\u7684\u6587\u4EF6\u90FD\u662F application-*.properties \u7684\u7C7B\u578B\u7684 * \u5C31\u662F\u4E0B\u9762\u586B\u5199\u7684\u53C2\u6570
+spring.profiles.active=test
+
+# \u6D4B\u8BD5@Value\u5C5E\u6027\u7684 \u914D\u7F6E\u65B9\u5F0F
+myname=yang
+
+###### springboot \u6574\u5408 mybatis (\u5355\u6570\u636E\u6E90\u7684\u914D\u7F6E)
+#spring.datasource.url=jdbc:mysql://192.168.120.150:3306/springboot_db
+#spring.datasource.username=root
+#spring.datasource.password=123456
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+###### springboot \u6574\u5408\u591A\u6570\u636E\u6E90\u7684\u914D\u7F6E
+spring.datasource.user.jdbcUrl=jdbc:mysql://192.168.120.150:3306/springboot_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false
+spring.datasource.user.username=root
+spring.datasource.user.password=123456
+spring.datasource.user.driverClassName=com.mysql.jdbc.Driver
+
+spring.datasource.order.jdbcUrl=jdbc:mysql://192.168.120.150:3306/springboot_db2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false
+spring.datasource.order.username=root
+spring.datasource.order.password=123456
+spring.datasource.order.driverClassName=com.mysql.jdbc.Driver
+
+###### springboot \u6574\u5408pageHelper \u914D\u7F6E
+mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+logging.level.com.inspur.user.service=debug
+pagehelper.helperDialect=mysql
+pagehelper.reasonable=true
+pagehelper.supportMethodsArguments=true
+pagehelper.params=count=countSql
+pagehelper.page-size-zero=true
+

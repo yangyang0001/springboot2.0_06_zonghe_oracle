@@ -1,0 +1,4 @@
+在访问resources中的文件的时候必须不能添加static路径 因为这是默认的路径
+如下:
+http://localhost:8080/static/背包.jpg 这种方式是报错的!
+http://localhost:8080/背包.jpg        这种方式是对的!

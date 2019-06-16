@@ -1,0 +1,93 @@
+server:
+    port: 80
+
+# 测试@Value属性的 配置方式
+myname: yang
+myconfig:
+    age: 22
+    address:
+        city: 北京
+        phone: 18765829080
+
+# 整合 jsp 的时候的配置
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    profiles:
+        active: test
+    datasource:
+        user:
+            jdbcUrl: jdbc:mysql://192.168.120.150:3306/springboot_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false
+            username: root
+            password: 123456
+            driverClassName:  com.mysql.jdbc.Driver
+        order:
+            jdbcUrl:  jdbc:mysql://192.168.120.150:3306/springboot_db2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false
+            username: root
+            password: 123456
+            driverClassName:  com.mysql.jdbc.Driver
+        #集成 mybatis plus (MySQL)后的数据源的配置
+#        mybatisplus:
+#            jdbcUrl:  jdbc:mysql://192.168.120.150:3306/mybatis_plus?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&useSSL=false
+#            username: root
+#            password: 123456
+#            driverClassName:  com.mysql.jdbc.Driver
+        #集成 mybatis plus (Oracle)后的数据源的配置
+        mybatisplus:
+            jdbcUrl:  jdbc:oracle:thin:@localhost:1521:ORCL
+            username: scott
+            password: tiger
+            driverClassName:  oracle.jdbc.driver.OracleDriver
+    application:
+        name: zonghe
+###### adminUI-client 监控中心的配置项(作为被监控端的配置), 这里先注释掉####
+#    boot:
+#        admin:
+#            client:
+#                url: http://localhost:8080
+
+###### springboot 整合mybatis + pageHelper 配置
+mybatis:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+### 配置日志级别
+logging:
+    level:
+        org:
+            apache:
+                ibatis: debug
+        com:
+            inspur:
+                user:
+                    mapper: debug
+                order:
+                    mapper: debug
+pagehelper:
+    helperDialect:  mysql
+    reasonable: true
+    supportMethodsArguments:  true
+    params: count=countSql
+    page-size-zero: true
+
+
+###### springboot 监控中心的配置, 这里先注释掉
+#management:
+#    endpoints:
+#        web:
+#            exposure:
+#                include: "*"
+
+
+# mybatis plus 全局配置模式(针对于mybatis-plus所连接的数据库起作用,本人测试没有起作用,用的是默认的,写了一个类进行处理)
+#mybatis-plus:
+#    global-config:
+#        db-config:
+#            #mybatis-plus所连接的数据库的主键策略
+#            #id-type: AUTO
+#            #mybatis-plus所连接的数据库表中前缀的配置
+#            table-prefix: table_
+
+
